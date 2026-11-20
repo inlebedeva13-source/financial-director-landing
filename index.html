@@ -1,0 +1,1527 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Внедрение управленческого учета и финансовое сопровождение торговых компаний. Финансовый директор на аутсорсинге.">
+<title>Финансовый директор | Управляемая прибыль</title>
+
+<style>
+:root {
+  --navy: #101e35;
+  --navy-light: #1a3150;
+  --green: #16c79a;
+  --green-light: #66e5c2;
+  --blue: #58a9ff;
+  --white: #ffffff;
+  --gray: #a8b5c7;
+  --light: #f3f7fb;
+  --text: #1a2b42;
+  --radius: 18px;
+  --shadow: 0 12px 35px rgba(12, 32, 57, .09);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Inter, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Arial, sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+.container {
+  width: min(1160px, 90%);
+  margin: auto;
+}
+
+section {
+  padding: 90px 0;
+}
+
+.section-title {
+  max-width: 760px;
+  margin-bottom: 45px;
+}
+
+.section-title h2 {
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.15;
+  margin-bottom: 17px;
+  letter-spacing: -1.3px;
+}
+
+.section-title p {
+  color: #68788d;
+  font-size: 17px;
+}
+
+.eyebrow {
+  color: #0caa83;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    110deg,
+    #ffffff 5%,
+    #73e7c6 48%,
+    #64aaff 95%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 25px;
+  border: 0;
+  border-radius: 12px;
+  background: linear-gradient(110deg, #10b98d, #51dfb9);
+  color: #062b25;
+  font-weight: 800;
+  cursor: pointer;
+  transition: .3s ease;
+  box-shadow: 0 8px 25px rgba(22, 199, 154, .2);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(22, 199, 154, .35);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.35);
+  color: white;
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,.1);
+}
+
+/* HEADER */
+
+header {
+  background: var(--navy);
+  color: white;
+  position: relative;
+  z-index: 10;
+}
+
+.navbar {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -.5px;
+}
+
+.logo span {
+  color: var(--green);
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  font-size: 13px;
+  color: #d0d9e5;
+}
+
+.nav-links a:hover {
+  color: var(--green-light);
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: white;
+  font-size: 27px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  background:
+    radial-gradient(circle at 75% 25%, #254c70 0, transparent 35%),
+    linear-gradient(120deg, #0d1a30, #142b49 70%, #10253d);
+  color: white;
+  padding: 55px 0 80px;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 5vw, 65px);
+  line-height: 1.07;
+  letter-spacing: -2.5px;
+  margin: 25px 0;
+}
+
+.hero-description {
+  font-size: 18px;
+  color: #d0dbea;
+  max-width: 570px;
+  margin-bottom: 28px;
+}
+
+.hero-label {
+  display: inline-block;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 30px;
+  padding: 8px 15px;
+  color: #b7f5e3;
+  font-size: 13px;
+}
+
+.hero-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.hero-feature {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #d7e2ef;
+  font-size: 14px;
+}
+
+.hero-feature span {
+  color: var(--green);
+  font-size: 20px;
+}
+
+.hero-image {
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 510px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,.15);
+  box-shadow: 0 25px 70px rgba(0,0,0,.3);
+}
+
+.image-note {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  padding: 15px 18px;
+  background: rgba(12, 28, 49, .88);
+  backdrop-filter: blur(12px);
+  border-radius: 13px;
+  color: white;
+  font-size: 13px;
+}
+
+/* PROBLEMS */
+
+.problems {
+  background: var(--light);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e7edf4;
+  padding: 28px;
+  border-radius: var(--radius);
+  transition: .35s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow);
+  border-color: #9cebd5;
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: #e6f8f2;
+  color: #079d76;
+  font-size: 23px;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #708096;
+}
+
+/* BENEFITS */
+
+.benefits {
+  background: white;
+}
+
+.benefit-card {
+  border-left: 3px solid var(--green);
+}
+
+/* SERVICES */
+
+.services {
+  background: var(--navy);
+  color: white;
+}
+
+.services .section-title p {
+  color: #b6c4d5;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.service-card {
+  padding: 35px;
+  background: linear-gradient(145deg, #1a3453, #152840);
+  border: 1px solid #34516e;
+  border-radius: 20px;
+  transition: .3s;
+}
+
+.service-card:hover {
+  border-color: var(--green);
+  transform: translateY(-5px);
+}
+
+.service-card h3 {
+  font-size: 24px;
+  margin: 15px 0;
+}
+
+.service-card p,
+.service-card li {
+  color: #c1cede;
+  font-size: 14px;
+}
+
+.service-card ul {
+  padding-left: 20px;
+  margin: 20px 0;
+}
+
+.service-card li {
+  margin-bottom: 9px;
+}
+
+/* PROCESS */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.step {
+  position: relative;
+  padding: 25px;
+  background: #f4f8fb;
+  border-radius: 16px;
+  border: 1px solid #e7edf3;
+}
+
+.step-number {
+  font-size: 38px;
+  font-weight: 900;
+  color: #b2eee0;
+  line-height: 1;
+  margin-bottom: 18px;
+}
+
+.step h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.step p {
+  font-size: 14px;
+  color: #708096;
+}
+
+/* CASES */
+
+.cases {
+  background: #f2f6fa;
+}
+
+.case-card {
+  padding: 30px;
+  border-radius: 20px;
+  background: white;
+  border: 1px solid #e3ebf2;
+  box-shadow: 0 8px 25px rgba(20, 40, 65, .04);
+  border-top: 4px solid var(--green);
+  transition: .3s;
+}
+
+.case-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+.case-type {
+  display: inline-block;
+  color: #078a6b;
+  background: #e4f8f1;
+  border-radius: 30px;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 800;
+  margin-bottom: 17px;
+}
+
+.case-card h3 {
+  font-size: 21px;
+  margin-bottom: 18px;
+}
+
+.case-result {
+  background: #effaf6;
+  border-radius: 12px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.case-result strong {
+  color: #078c69;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* EXPERTISE */
+
+.expertise {
+  background: white;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.skill {
+  padding: 20px;
+  border: 1px solid #e6edf3;
+  border-radius: 14px;
+  background: white;
+  font-weight: 650;
+  transition: .3s ease;
+}
+
+.skill:hover {
+  background: var(--navy);
+  color: white;
+  transform: translateY(-5px);
+  border-color: var(--green);
+}
+
+/* TOOLS */
+
+.tools {
+  background: var(--navy);
+  color: white;
+}
+
+.tools .section-title p {
+  color: #b6c4d5;
+}
+
+.tag-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+.tag {
+  border: 1px solid #47627d;
+  color: #e1ebf5;
+  border-radius: 30px;
+  padding: 12px 19px;
+  font-size: 14px;
+  transition: .3s;
+}
+
+.tag:hover {
+  background: var(--green);
+  border-color: var(--green);
+  color: #082b25;
+  transform: translateY(-3px);
+}
+
+/* FORMATS */
+
+.format-card {
+  background: white;
+  border: 1px solid #e2eaf1;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
+
+.format-card.featured {
+  border: 2px solid var(--green);
+  position: relative;
+}
+
+.format-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.format-card ul {
+  padding-left: 20px;
+  margin: 20px 0;
+  color: #63758b;
+}
+
+.format-card li {
+  margin-bottom: 8px;
+}
+
+/* FAQ */
+
+.faq {
+  background: var(--light);
+}
+
+details {
+  background: white;
+  padding: 20px 23px;
+  margin-bottom: 12px;
+  border-radius: 13px;
+  border: 1px solid #e5ebf2;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+details p {
+  color: #718096;
+  font-size: 14px;
+  padding-top: 14px;
+}
+
+/* CTA */
+
+.cta {
+  background:
+    radial-gradient(circle at 90% 15%, #225b67, transparent 35%),
+    linear-gradient(120deg, #10223c, #183858);
+  color: white;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.cta p {
+  color: #c5d5e4;
+  max-width: 680px;
+  margin: 0 auto 30px;
+}
+
+/* FORM */
+
+.form-section {
+  background: #f4f7fa;
+}
+
+.form-box {
+  background: white;
+  max-width: 750px;
+  margin: auto;
+  padding: 40px;
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 14px;
+  border: 1px solid #dce5ed;
+  border-radius: 10px;
+  outline: none;
+  background: #fbfdff;
+  width: 100%;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(22,199,154,.1);
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-note {
+  font-size: 11px;
+  color: #8492a4;
+  margin-top: 15px;
+}
+
+.form-message {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 650;
+  color: #078c69;
+}
+
+/* FOOTER */
+
+footer {
+  background: #0b1729;
+  color: #c3cedb;
+  padding: 35px 0;
+  font-size: 13px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* ANIMATIONS */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image img {
+    height: 400px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skill-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 82px;
+    left: 0;
+    right: 0;
+    padding: 25px 5%;
+    background: #101e35;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    padding: 65px 0;
+  }
+
+  .hero {
+    padding-top: 40px;
+  }
+
+  .hero h1 {
+    font-size: 39px;
+    letter-spacing: -1.5px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .hero-image img {
+    height: 300px;
+  }
+
+  .cards,
+  .service-grid,
+  .steps,
+  .skill-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-features {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-box {
+    padding: 23px 17px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full {
+    grid-column: auto;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .section-title h2 {
+    font-size: 30px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container navbar">
+    <a href="#" class="logo">FIN<span>DIRECTOR</span></a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#services">Услуги</a>
+      <a href="#process">Этапы работы</a>
+      <a href="#cases">Кейсы</a>
+      <a href="#tools">Инструменты</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Открыть меню" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="container hero-grid">
+
+    <div class="reveal">
+      <span class="hero-label">
+        Финансовый директор на аутсорсинге
+      </span>
+
+      <h1>
+        Превратите оборот
+        в <span class="gradient-text">управляемую прибыль</span>
+      </h1>
+
+      <p class="hero-description">
+        Внедрим управленческий финансовый учёт
+        и возьмём денежные потоки вашей торговой
+        компании под профессиональный контроль.
+      </p>
+
+      <div class="hero-features">
+        <div class="hero-feature">
+          <span>↗</span> Прибыль и рентабельность
+        </div>
+        <div class="hero-feature">
+          <span>₽</span> Контроль расходов
+        </div>
+        <div class="hero-feature">
+          <span>◈</span> Денежные потоки
+        </div>
+        <div class="hero-feature">
+          <span>▦</span> Финансовое планирование
+        </div>
+      </div>
+
+      <p style="margin-bottom:25px;color:#c5d5e4;font-size:14px">
+        Для торговых компаний с выручкой
+        <strong style="color:#66e5c2">
+          30-150 млн рублей в месяц
+        </strong>
+      </p>
+
+      <a href="#contacts" class="btn">
+        Получить бесплатную консультацию →
+      </a>
+    </div>
+
+    <div class="hero-image reveal">
+      <!-- Замените hero-finance-director.jpg на фотографию
+           женщины-финдиректора и мужчины-собственника -->
+      <img src="hero-finance-director.jpg"
+           alt="Женщина финансовый директор обсуждает финансовые показатели с собственником бизнеса"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'">
+
+      <div style="display:none;place-items:center;height:400px;
+        background:linear-gradient(135deg,#1b4260,#0e2038);
+        border-radius:22px;color:#a9d8d0;text-align:center;padding:30px">
+        <div>
+          <div style="font-size:65px">📊</div>
+          <strong>Финансовое управление бизнесом</strong>
+          <p style="font-size:13px;margin-top:10px">
+            Здесь размещается фотография эксперта и собственника
+          </p>
+        </div>
+      </div>
+
+      <div class="image-note">
+        Финансовая аналитика. Прозрачность. Управляемая прибыль.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROBLEMS -->
+
+<section class="problems">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span class="eyebrow">Знакомые проблемы?</span>
+      <h2>Вы управляете бизнесом или пытаетесь угадать, что происходит с его финансами?</h2>
+      <p>Шесть ситуаций, которые мешают собственнику эффективно управлять торговой компанией.</p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card reveal">
+        <div class="card-icon">📉</div>
+        <h3>Оборот растёт, а прибыль нет</h3>
+        <p>Продажи увеличиваются, но денег больше не становится. Непонятно, куда уходит заработанное.</p>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-icon">💳</div>
+        <h3>Деньги постоянно заканчиваются</h3>
+        <p>На бумаге бизнес прибыльный, но не хватает средств на поставщиков, зарплату и аренду.</p>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-icon">🏬</div>
+        <h3>Непонятна прибыльность магазинов</h3>
+        <p>Общая прибыль сети не показывает, какие торговые точки зарабатывают, а какие убыточны.</p>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-icon">📊</div>
+        <h3>Расходы растут быстрее выручки</h3>
+        <p>Аренда, зарплаты, логистика и закупки постепенно снижают рентабельность.</p>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-icon">📑</div>
+        <h3>Нет единой финансовой картины</h3>
+        <p>Есть бухгалтерия, выписки и Excel, но нет полноценной управленческой отчётности.</p>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-icon">⏱</div>
+        <h3>Собственник контролирует всё сам</h3>
+        <p>Вместо развития бизнеса вы тратите время на платежи, остатки и финансовые таблицы.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+
+<section class="benefits">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span class="eyebrow">Результат для бизнеса</span>
+      <h2>Вы будете понимать, что происходит с деньгами вашей компании</h2>
+      <p>Создадим систему, которая превращает финансовые данные в инструменты управления.</p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card benefit-card reveal">
+        <div class="card-icon">📈</div>
+        <h3>Реальная прибыль</h3>
+        <p>Понимание финансового результата компании и отдельных направлений.</p>
+      </div>
+
+      <div class="card benefit-card reveal">
+        <div class="card-icon">💰</div>
+        <h3>Контроль денежных потоков</h3>
+        <p>Планирование платежей и раннее выявление риска нехватки денег.</p>
+      </div>
+
+      <div class="card benefit-card reveal">
+        <div class="card-icon">🏪</div>
+        <h3>Прибыльность магазинов</h3>
+        <p>Анализ эффективности каждой торговой точки.</p>
+      </div>
+
+      <div class="card benefit-card reveal">
+        <div class="card-icon">🎯</div>
+        <h3>Контроль расходов</h3>
+        <p>Выявление перерасходов и возможностей оптимизации.</p>
+      </div>
+
+      <div class="card benefit-card reveal">
+        <div class="card-icon">📅</div>
+        <h3>Финансовое планирование</h3>
+        <p>Прогноз поступлений, платежей и потребности в финансировании.</p>
+      </div>
+
+      <div class="card benefit-card reveal">
+        <div class="card-icon">🤝</div>
+        <h3>Финансовый партнёр</h3>
+        <p>Регулярная аналитика и рекомендации собственнику.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span class="eyebrow">Наши услуги</span>
+      <h2>Не просто внедряем отчётность. Создаём систему управления финансами</h2>
+      <p>Комплексная услуга от настройки учёта до регулярного финансового сопровождения.</p>
+    </div>
+
+    <div class="service-grid">
+
+      <div class="service-card reveal">
+        <div style="font-size:35px">⚙️</div>
+        <h3>Внедрение управленческого учёта</h3>
+        <p>Создаём финансовую систему компании с нуля или совершенствуем существующую.</p>
+        <ul>
+          <li>Диагностика текущего учёта</li>
+          <li>Внедрение ОПиУ и ОДДС</li>
+          <li>Управленческий баланс</li>
+          <li>Аналитика по магазинам</li>
+          <li>Бюджетирование</li>
+          <li>Платёжный календарь</li>
+          <li>Регламенты подготовки отчётности</li>
+        </ul>
+        <a href="#contacts" class="btn btn-outline">Обсудить внедрение →</a>
+      </div>
+
+      <div class="service-card reveal">
+        <div style="font-size:35px">📊</div>
+        <h3>Постоянное финансовое сопровождение</h3>
+        <p>Продолжаем работать с финансами компании после внедрения системы.</p>
+        <ul>
+          <li>Регулярный анализ результатов</li>
+          <li>План-фактный анализ</li>
+          <li>Контроль денежных потоков</li>
+          <li>Прогнозирование кассовых разрывов</li>
+          <li>Анализ рентабельности</li>
+          <li>Контроль бюджетов</li>
+          <li>Рекомендации собственнику</li>
+        </ul>
+        <a href="#contacts" class="btn btn-outline">Обсудить сопровождение →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+
+<section id="process">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span class="eyebrow">Процесс сотрудничества</span>
+      <h2>От финансового хаоса к прозрачной системе управления</h2>
+    </div>
+
+    <div class="steps">
+
+      <div class="step reveal">
+        <div class="step-number">01</div>
+        <h3>Первичная диагностика</h3>
+        <p>Изучаем компанию и определяем основные финансовые проблемы.</p>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-number">02</div>
+        <h3>Проектирование</h3>
+        <p>Разрабатываем структуру учёта и необходимые показатели.</p>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-number">03</div>
+        <h3>Внедрение</h3>
+        <p>Настраиваем отчётность, бюджеты и платёжный календарь.</p>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-number">04</div>
+        <h3>Запуск отчётности</h3>
+        <p>Организуем сбор и проверку финансовых данных.</p>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-number">05</div>
+        <h3>Анализ и контроль</h3>
+        <p>Проводим план-фактный анализ и выявляем отклонения.</p>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-number">06</div>
+        <h3>Сопровождение</h3>
+        <p>Готовим аналитику, прогнозы и рекомендации собственнику.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+
+<section class="cases" id="cases">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span class="eyebrow">Практические примеры</span>
+      <h2>Финансовые решения для задач торгового бизнеса</h2>
+      <p>Примеры того, какие задачи решает система финансового управления.</p>
+    </div>
+
+    <div class="cards">
+
+      <div class="case-card reveal">
+        <span class="case-type">ДЕМОНСТРАЦИОННЫЙ КЕЙС</span>
+        <h3>Розничная сеть: 8 магазинов</h3>
+        <p><strong>Проблема:</strong> собственник не видел прибыльность отдельных торговых точек.</p>
+        <p style="margin-top:12px"><strong>Решение:</strong> ОПиУ по магазинам и анализ рентабельности.</p>
+        <div class="case-result">
+          <strong>Результат</strong>
+          Выявлены две убыточные торговые точки. Подготовлены сценарии повышения рентабельности.
+        </div>
+      </div>
+
+      <div class="case-card reveal">
+        <span class="case-type">ДЕМОНСТРАЦИОННЫЙ КЕЙС</span>
+        <h3>Оптовая торговля: 80 млн руб./мес.</h3>
+        <p><strong>Проблема:</strong> регулярная нехватка денег на оплату поставщикам.</p>
+        <p style="margin-top:12px"><strong>Решение:</strong> ОДДС, платёжный календарь и прогноз остатков.</p>
+        <div class="case-result">
+          <strong>Результат</strong>
+          Создана система предварительного выявления риска кассовых разрывов.
+        </div>
+      </div>
+
+      <div class="case-card reveal">
+        <span class="case-type">ДЕМОНСТРАЦИОННЫЙ КЕЙС</span>
+        <h3>Торговая компания: 120 млн руб./мес.</h3>
+        <p><strong>Проблема:</strong> оборот увеличивался, но прибыль росла медленно.</p>
+        <p style="margin-top:12px"><strong>Решение:</strong> план-фактный анализ и контроль маржинальности.</p>
+        <div class="case-result">
+          <strong>Результат</strong>
+          Созданы инструменты выявления отклонений и управления рентабельностью.
+        </div>
+      </div>
+
+    </div>
+
+    <p style="font-size:12px;color:#8291a3;margin-top:20px">
+      * Кейсы являются учебными примерами, а не подтверждёнными клиентскими проектами.
+    </p>
+
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+
+<section class="expertise">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span class="eyebrow">Экспертность</span>
+      <h2>Финансовый директор, который понимает экономику торговли</h2>
+      <p>Компетенции для управления финансами розничных и оптовых компаний.</p>
+    </div>
+
+    <div class="skill-grid">
+      <div class="skill reveal">✓ Управленческий учёт</div>
+      <div class="skill reveal">✓ Финансовое моделирование</div>
+      <div class="skill reveal">✓ Бюджетирование</div>
+      <div class="skill reveal">✓ Управление денежными потоками</div>
+      <div class="skill reveal">✓ Анализ рентабельности</div>
+      <div class="skill reveal">✓ Контроль расходов</div>
+      <div class="skill reveal">✓ Аналитика торговых точек</div>
+      <div class="skill reveal">✓ План-фактный анализ</div>
+      <div class="skill reveal">✓ Финансовое планирование</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TOOLS -->
+
+<section class="tools" id="tools">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span class="eyebrow">Инструменты управления</span>
+      <h2>Полная финансовая картина вашей компании</h2>
+      <p>Используем инструменты, которые помогают принимать обоснованные решения.</p>
+    </div>
+
+    <div class="tag-grid reveal">
+      <span class="tag">ОПиУ</span>
+      <span class="tag">ОДДС</span>
+      <span class="tag">Управленческий баланс</span>
+      <span class="tag">Бюджет доходов и расходов</span>
+      <span class="tag">Бюджет движения денежных средств</span>
+      <span class="tag">Платёжный календарь</span>
+      <span class="tag">План-фактный анализ</span>
+      <span class="tag">Финансовая модель</span>
+      <span class="tag">Анализ маржинальности</span>
+      <span class="tag">ABC-XYZ анализ</span>
+      <span class="tag">Анализ рентабельности магазинов</span>
+      <span class="tag">Прогноз денежных потоков</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- FORMATS -->
+
+<section>
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span class="eyebrow">Форматы сотрудничества</span>
+      <h2>Выберите формат финансового управления</h2>
+    </div>
+
+    <div class="cards">
+
+      <div class="format-card reveal">
+        <h3>Внедрение учёта</h3>
+        <p>Для компаний, которым необходимо создать полноценную систему финансовой отчётности.</p>
+        <ul>
+          <li>Настройка ОПиУ и ОДДС</li>
+          <li>Управленческий баланс</li>
+          <li>Бюджетирование</li>
+          <li>Платёжный календарь</li>
+          <li>Регламенты</li>
+        </ul>
+        <a href="#contacts" class="btn">Обсудить внедрение</a>
+      </div>
+
+      <div class="format-card reveal">
+        <h3>Финансовое сопровождение</h3>
+        <p>Для собственников, которым нужен регулярный финансовый контроль.</p>
+        <ul>
+          <li>Регулярная отчётность</li>
+          <li>План-фактный анализ</li>
+          <li>Контроль денежных потоков</li>
+          <li>Финансовые прогнозы</li>
+          <li>Рекомендации собственнику</li>
+        </ul>
+        <a href="#contacts" class="btn">Обсудить сопровождение</a>
+      </div>
+
+      <div class="format-card featured reveal">
+        <span class="case-type">КОМПЛЕКСНОЕ РЕШЕНИЕ</span>
+        <h3>Внедрение + сопровождение</h3>
+        <p>Полный цикл финансового управления от создания системы до её постоянной работы.</p>
+        <ul>
+          <li>Все этапы внедрения</li>
+          <li>Регулярный финансовый анализ</li>
+          <li>Контроль денежных потоков</li>
+          <li>Управленческие рекомендации</li>
+        </ul>
+        <a href="#contacts" class="btn">Получить предложение</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+
+<section class="faq">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span class="eyebrow">Вопросы и ответы</span>
+      <h2>Что важно знать перед началом работы</h2>
+    </div>
+
+    <details>
+      <summary>Сколько времени занимает внедрение?</summary>
+      <p>Срок зависит от количества торговых точек, сложности процессов и состояния исходных данных. График определяем после диагностики.</p>
+    </details>
+
+    <details>
+      <summary>Нужно ли менять бухгалтерскую программу?</summary>
+      <p>Не обязательно. Сначала оцениваем возможности существующих программ и их интеграции.</p>
+    </details>
+
+    <details>
+      <summary>Можно ли работать с Excel?</summary>
+      <p>Да. Оцениваем имеющиеся данные и определяем, какие процессы необходимо улучшить.</p>
+    </details>
+
+    <details>
+      <summary>Кто собирает финансовые данные?</summary>
+      <p>Распределяем ответственность между сотрудниками компании и финансовым директором.</p>
+    </details>
+
+    <details>
+      <summary>Вы гарантируете отсутствие кассовых разрывов?</summary>
+      <p>Нет. Но мы внедряем прогнозирование денежных потоков и раннее выявление финансовых рисков, чтобы собственник мог своевременно реагировать на возможный дефицит средств.</p>
+    </details>
+
+    <details>
+      <summary>Сколько стоят ваши услуги?</summary>
+      <p>Стоимость определяется индивидуально после диагностики и согласования объёма работ.</p>
+    </details>
+
+  </div>
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+  <div class="container reveal">
+    <span class="eyebrow" style="color:#6ce7c5">Следующий шаг</span>
+    <h2>Пора управлять прибылью, а не просто считать оборот</h2>
+    <p>
+      Обсудим текущую ситуацию, определим основные финансовые проблемы
+      и предложим подходящий формат сотрудничества.
+    </p>
+    <a href="#contacts" class="btn">Записаться на консультацию →</a>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+
+<section class="form-section" id="contacts">
+  <div class="container">
+
+    <div class="form-box reveal">
+
+      <div class="section-title">
+        <span class="eyebrow">Бесплатная консультация</span>
+        <h2>Обсудим финансы вашего бизнеса</h2>
+        <p>Заполните форму. Мы свяжемся с вами для согласования времени консультации.</p>
+      </div>
+
+      <form id="leadForm">
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="name">Ваше имя *</label>
+            <input id="name" name="name" required
+              placeholder="Как к вам обращаться">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Телефон *</label>
+            <input id="phone" name="phone" type="tel"
+              required placeholder="+7 (___) ___-__-__">
+          </div>
+
+          <div class="form-group">
+            <label for="company">Название компании</label>
+            <input id="company" name="company"
+              placeholder="Название компании">
+          </div>
+
+          <div class="form-group">
+            <label for="revenue">Выручка в месяц</label>
+            <select id="revenue" name="revenue">
+              <option value="">Выберите диапазон</option>
+              <option>До 30 млн рублей</option>
+              <option>30-60 млн рублей</option>
+              <option>60-100 млн рублей</option>
+              <option>100-150 млн рублей</option>
+              <option>Более 150 млн рублей</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="stores">Количество торговых точек</label>
+            <select id="stores" name="stores">
+              <option value="">Выберите количество</option>
+              <option>1 магазин</option>
+              <option>2-5 магазинов</option>
+              <option>6-10 магазинов</option>
+              <option>11-20 магазинов</option>
+              <option>Более 20 магазинов</option>
+            </select>
+          </div>
+
+          <div class="form-group full">
+            <label for="problem">Какая финансовая задача актуальна?</label>
+            <textarea id="problem" name="problem"
+              placeholder="Например, нет понимания реальной прибыли или регулярно возникают кассовые разрывы"></textarea>
+          </div>
+
+          <div class="form-group full">
+            <label style="display:flex;gap:10px;align-items:flex-start;font-weight:400">
+              <input type="checkbox" required style="width:auto;margin-top:5px">
+              Я согласен(на) на обработку персональных данных
+              в соответствии с политикой конфиденциальности.
+            </label>
+          </div>
+
+          <div class="form-group full">
+            <button class="btn" type="submit">
+              Получить бесплатную консультацию →
+            </button>
+          </div>
+
+        </div>
+
+        <p class="form-note">
+          Первичная консультация длится ориентировочно 20-30 минут.
+          Отправка формы должна быть подключена к CRM или почте
+          перед запуском сайта.
+        </p>
+
+        <div class="form-message" id="formMessage" role="status"></div>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <strong>FINDIRECTOR</strong><br>
+      Финансовый директор на аутсорсинге
+    </div>
+    <div>
+      © 2026. Все права защищены.<br>
+      Политика конфиденциальности
+    </div>
+  </div>
+</footer>
+
+<script>
+// MOBILE MENU
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  const opened = navLinks.classList.toggle("active");
+  menuToggle.setAttribute("aria-expanded", opened);
+  menuToggle.textContent = opened ? "×" : "☰";
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.textContent = "☰";
+  });
+});
+
+// SCROLL ANIMATION
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(el => {
+  observer.observe(el);
+});
+
+// FORM VALIDATION
+
+const leadForm = document.getElementById("leadForm");
+const formMessage = document.getElementById("formMessage");
+
+leadForm.addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  if (!leadForm.reportValidity()) return;
+
+  const data = Object.fromEntries(
+    new FormData(leadForm).entries()
+  );
+
+  const phone = data.phone.replace(/[^\d+]/g, "");
+
+  if (phone.replace(/\D/g, "").length < 10) {
+    formMessage.style.color = "#c0392b";
+    formMessage.textContent = "Проверьте правильность номера телефона.";
+    return;
+  }
+
+  /*
+    ПОДКЛЮЧЕНИЕ CRM
+
+    Здесь необходимо отправлять данные на ваш сервер
+    или CRM через защищённый API.
+
+    Пример:
+    await fetch("/api/leads", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(data)
+    });
+
+    Не размещайте секретные API-ключи CRM в HTML.
+  */
+
+  console.log("Заявка для подключения CRM:", data);
+
+  formMessage.style.color = "#078c69";
+  formMessage.textContent =
+    "Форма проверена. Для реальной отправки подключите CRM или сервер.";
+
+  // Форма пока не отправляет данные внешнему получателю.
+});
+</script>
+
+</body>
+</html>
